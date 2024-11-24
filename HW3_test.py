@@ -132,12 +132,12 @@ def train_HW3(device, train_data, valid_data, epoch, moudel, loss_fun, optimizer
 #测试训练函数
 if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    Mydataset = CNN_dataset("E:\\New desktop\\Debug log of the code\\reviewing neural networks\\ml2023spring-hw3\\train",
+    Mydataset = CNN_dataset("train_filepath",
                             train_tfm)
     train_data_loader = DataLoader(dataset=Mydataset, batch_size=16, shuffle=True, num_workers=4)
 
     valid_dataset = CNN_dataset(
-        "E:\\New desktop\\Debug log of the code\\reviewing neural networks\\ml2023spring-hw3\\valid",
+        "test_filepath",
         test_tfm)
     valid_data_loader = DataLoader(dataset=valid_dataset, batch_size=32, shuffle=False)
 
